@@ -1,20 +1,20 @@
 var app = angular.module('angularIntroApp', []);
 
-app.controller('MainCtrl', [function () {
+app.controller('MainCtrl', function () {
   this.message = 'Hello';
 
-  self.changeMessage = function () {
-    if(self.message == 'Hello'){
-      self.message = 'Goodbye';
+  this.changeMessage = function () {
+    if(this.message == 'Hello'){
+      this.message = 'Goodbye';
     }else{
-      self.message = 'Hello'
+      this.message = 'Hello'
     }
   };
 
-  self.log = function(){
-    console.log('MainCtrl has been created');
+  this.log = function(){
+    console.log('Current message value=' + this.message);
   }
-}]);
+});
 
 app.controller('NgRepeatCtrl', [function() {
   this.notes = [
@@ -54,7 +54,7 @@ app.controller('NgRepeatObjectCtrl', [function() {
       label: 'Finished Third Note',
       done: true
     },
-    Pavel: {
+    Tomas: {
       id: 2,
       label: 'Second Note',
       done: false
