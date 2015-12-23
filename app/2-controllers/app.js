@@ -44,17 +44,17 @@ app.controller('MoreDirectivesCtrl', [
 
 app.controller('NgRepeatObjectCtrl', [function() {
   this.notes = {
-    Martin: {
+    martin: {
       id: 1,
       label: 'First Note',
       done: false
     },
-    David: {
+    david: {
       id: 3,
       label: 'Finished Third Note',
       done: true
     },
-    Tomas: {
+    tomas: {
       id: 2,
       label: 'Second Note',
       done: false

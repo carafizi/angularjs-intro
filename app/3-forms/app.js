@@ -23,8 +23,15 @@ app.controller('SimpleFormController', [function() {
 }]);
 
 app.controller('ValidationController', [function() {
-  var self = this;
-  self.submit = function() {
-    console.log('User clicked submit with ', self.user);
+  this.submit = function() {
+    console.log('User clicked submit with ', this.user);
   };
+  //this.countries = [
+  //  {label: 'Czech Republic', id: 1},
+  //  {label: 'Germany', id: 2},
+  //  {label: 'Other', id: 3}
+  //];
+  //this.selectedCountryId = 2;
+  //this.selectedCountry = this.countries[1];
+
 }]);

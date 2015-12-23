@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="angularIntroApp">
-<head><title>Notes App</title></head>
+<head><title>Notes App</title>
+</head>
 <body ng-controller="ValidationController as ctrl">
 
 <form ng-submit="ctrl.submit()" name="myForm">
@@ -9,27 +10,53 @@
          ng-model="ctrl.user.username"
          required
          ng-minlength="6">
-    <span ng-show="myForm.uname.$error.required">
-      This is a required field.
-    </span>
-    <span ng-show="myForm.uname.$error.minlength">
-      Minimum length required is 6.
-    </span>
-    <span ng-show="myForm.uname.$invalid">
-      This field is invalid
-    </span>
+  <span ng-show="myForm.uname.$error.required">This is a required field</span>
+  <span ng-show="myForm.uname.$error.minlength">Minimum length required is 6. </span>
+  <span ng-show="myForm.uname.$invalid"> This field is invalid</span>
+
   <p>
-  <input type="password"
-         name="pwd"
-         ng-model="ctrl.user.password"
-         required>
-    <span ng-show="myForm.pwd.$error.required">
-      This is a required field
-    </span>
-    <p></p>
+
+
+    <input type="password"
+           name="pwd"
+           ng-model="ctrl.user.password"
+           required>
+    <span ng-show="myForm.pwd.$error.required">This is a required field</span>
+
+  <p>
+
+    <!--<input type="email"-->
+           <!--name="email"-->
+           <!--ng-model="ctrl.user.email"-->
+           <!--required>-->
+    <!--<span ng-show="myForm.email.$invalid">Email is invalid</span>-->
+
+  <!--<p/>-->
+
+  <!--<input type="date"-->
+         <!--name="date"-->
+         <!--ng-model="ctrl.user.date"-->
+         <!--required>-->
+  <!--<span ng-show="myForm.date.$invalid">Date is invalid</span>-->
+
+  <!--<p/>-->
+
   <input type="submit"
          value="Submit"
          ng-disabled="myForm.$invalid">
+
+  <!--<p/>-->
+
+  <!--<select ng-model="ctrl.selectedCountryId"-->
+          <!--ng-options="c.id as c.label for c in ctrl.countries">-->
+  <!--</select>-->
+  <!--Selected Country ID : {{ctrl.selectedCountryId}}-->
+  <!--<p/>-->
+
+  <!--<select ng-model="ctrl.selectedCountry"-->
+          <!--ng-options="c.label for c in ctrl.countries">-->
+  <!--</select>-->
+  <!--Selected Country : {{ctrl.selectedCountry}}-->
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js"></script>
@@ -37,3 +64,23 @@
 </body>
 </html>
 
+
+<!--Form states in AngularJS
+$invalid - AngularJS sets this state when any of the validations (required, ng-minlength, and others) mark any of the fields within the form as invalid.
+$valid -  The inverse of the previous state, which states that all the validations in the form are currently evaluating to correct.
+$pristine - All forms in AngularJS start with this state. This allows you to figure out if a user has started typing in and modifying any of the form elements. Possible usage: disabling the reset button if a form is pristine.
+$dirty - The inverse of $pristine, which states that the user made some changes (he can revert it, but the $dirty bit is set).
+$error - This field on the form houses all the individual fields and the errors on each form element. We will talk more about this in the following section.
+-->
+
+
+<!--Built-in AngularJS validators
+required  - As previously discussed, this ensures that the field is required, and the field is marked invalid until it isfilled out.
+ng-required - Unlike required, which marks a field as always required, the ng-required directive allows us toconditionally mark an input field as required based on a Boolean condition in the controller.
+ng-minlength - We can set the minimum length of the value in the input field with this directive.
+ng-maxlength - We can set the maximum length of the value in the input field with this directive.
+ng-pattern - The validity of an input field can be checked against the regular expression pattern specified as part of thisdirective.
+type="email" - Text input with built-in email validation.
+type="number" - Text input with number validation. Can also have additional attributes for min and max values of thenumber itself.
+type="date" - If the browser supports it, shows an HTML datepicker. Otherwise, defaults to a text input. The ngmodel that this binds to will be a date object. This expects the date to be in yyyy-mm-dd format (e.g.,2009-10-24).
+type="url" - Text input with URL validation.-->
