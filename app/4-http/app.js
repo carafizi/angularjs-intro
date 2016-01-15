@@ -8,7 +8,7 @@ app.controller('MainCtrl', ['$http', function ($http) {
 
 
     var fetchItems = function() {
-        return $http.get('http://requestb.in/zf9q83zf').then(
+        return $http.get('http://jsonplaceholder.typicode.com/posts').then(
             function(response) {
                 self.items = response.data;
             }, function(errResponse) {
