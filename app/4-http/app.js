@@ -1,45 +1,28 @@
-'use strict';
+var app = angular.module('angularIntroApp', []);
 
-// declare modules
-angular.module('angularIntroApp', []);
-angular.module('Home', []);
 
-angular.module('BasicHttpAuthExample', [
-  'Authentication',
-  'Home',
-  'ngRoute',
-  'ngCookies'
-])
+app.controller('MainCtrl', ['$http', function ($http) {
+    var self = this;
+    self.items =[];
+    self.newItem = {};
 
-  .config(['$routeProvider', function ($routeProvider) {
 
-    $routeProvider
-      .when('/login', {
-        controller: 'LoginController',
-        templateUrl: 'modules/authentication/views/login.html'
-      })
+    var fetchItems = function() {
+        return $http.get('http://requestb.in/zf9q83zf').then(
+            function(response) {
+                self.items = response.data;
+            }, function(errResponse) {
+                console.error('Error while fetching notes');
+            });
+    };
 
-      .when('/', {
-        controller: 'HomeController',
-        templateUrl: 'modules/home/views/home.html'
-      })
+    fetchItems();
 
-      .otherwise({ redirectTo: '/login' });
-  }])
-
-  .run(['$rootScope', '$location', '$cookieStore', '$http',
-    function ($rootScope, $location, $cookieStore, $http) {
-      // keep user logged in after page refresh
-      $rootScope.globals = $cookieStore.get('globals') || {};
-      if ($rootScope.globals.currentUser) {
-        $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
-      }
-
-      $rootScope.$on('$locationChangeStart', function (event, next, current) {
-        // redirect to login page if not logged in
-        if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
-          $location.path('/login');
-        }
-      });
-    }]);
-
+    self.add = function() {
+        $http.post('http://jsonplaceholder.typicode.com/posts', self.newItem)
+            .then(fetchItems)
+            .then(function(response) {
+                self.newItem = {};
+            });
+    };
+}]);

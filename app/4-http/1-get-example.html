@@ -10,9 +10,11 @@
   </style>
 </head>
 
-<body ng-controller="MemberController as mainCtrl">
+<body ng-controller="MainCtrl as mainCtrl">
 <h1>Hello Servers!</h1>
 <div ng-repeat="item in mainCtrl.items" class="item">
+  <div>UserId:<span ng-bind="item.userId"></span></div>
+  <div>ID:<span ng-bind="item.id"></span></div>
   <div>Body:<span ng-bind="item.body"></span></div>
   <div>Title: <span ng-bind="item.title"></span></div>
 </div>
