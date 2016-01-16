@@ -25,8 +25,7 @@ app.controller('NgRepeatCtrl', [function() {
   ];
 }]);
 
-app.controller('MoreDirectivesCtrl', [
-  function() {
+app.controller('MoreDirectivesCtrl', [function() {
     this.notes = [
       {label: 'First Note', done: false, assignee: 'Martin'},
       {label: 'Second Note', done: false, assignee: 'Honza'},

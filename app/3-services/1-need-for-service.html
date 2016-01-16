@@ -16,7 +16,7 @@
 <div ng-switch on="mainCtrl.tab">
 
   <div ng-switch-when="first">
-    <div ng-controller="SubCtrl as ctrl">
+    <div style="background-color: aqua"  ng-controller="SubCtrl as ctrl">
       <h3>First tab</h3>
       <ul>
         <li ng-repeat="item in ctrl.list">
@@ -26,10 +26,10 @@
 
       <button ng-click="ctrl.add()">Add More Items</button>
     </div>
-
   </div>
+
   <div ng-switch-when="second">
-    <div ng-controller="SubCtrl as ctrl">
+    <div style="background-color: burlywood" ng-controller="SubCtrl as ctrl">
       <h3>Second tab</h3>
       <ul>
         <li ng-repeat="item in ctrl.list">
