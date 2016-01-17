@@ -13,23 +13,26 @@
 <ul>
     <li><a href="#/">Default Route</a></li>
     <li><a href="#/second">Second Route</a></li>
-    <li><a href="#/asdasdasd">Non existent route</a></li>
+    <li><a href="#/third">Third Route</a></li>
+    <li><a href="#/included">Included template</a></li>
+    <li><a href="#/redirectToSecond">Redirect to second</a></li>
+    <li><a href="#/nonexistingstring">Non existing route</a></li>
 </ul>
 
 <div ng-view></div>
 
 <script type="text/javascript">
-    angular.module('routingApp', ['ngRoute'])
-            .config(['$routeProvider', function($routeProvider) {
+    var app = angular.module('routingApp', ['ngRoute']);
 
-                $routeProvider.when('/', {
-                    template: '<h5>This is the default route</h5>'
-                })
-                        .when('/second', {
-                            template: '<h5>This is the second route</h5>'
-                        })
-                        .otherwise({redirectTo: '/'});
-            }]);
+    app.config(['$routeProvider', function ($routeProvider) {
+        $routeProvider
+                .when('/', {template: '<h5>This is the default route</h5>'})
+                .when('/second', {template: '<h5>This is the second route</h5>'})
+                .when('/third', {template: '<h5>This is the third route</h5>'})
+                .when('/included', {templateUrl: 'template.html'})
+                .when('/redirectToSecond', {redirectTo: '/second'})
+                .otherwise({redirectTo: '/'});
+    }]);
 </script>
 </body>
 </html>

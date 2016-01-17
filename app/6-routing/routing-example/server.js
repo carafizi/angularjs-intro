@@ -1,6 +1,4 @@
-/**
- * Created by abhiroop on 5/6/14.
- */
+
 var express = require('express'),
   http = require('http'),
   passport = require('passport'),
