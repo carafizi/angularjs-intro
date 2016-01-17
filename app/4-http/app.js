@@ -8,7 +8,7 @@ app.controller('MainCtrl', ['$http', function ($http) {
 
 
     var fetchItems = function() {
-        return $http.get('http://jsonplaceholder.typicode.com/posts').then(
+        return $http.get('/api/note').then(
             function(response) {
                 self.items = response.data;
             }, function(errResponse) {
@@ -19,7 +19,7 @@ app.controller('MainCtrl', ['$http', function ($http) {
     fetchItems();
 
     self.add = function() {
-        $http.post('http://jsonplaceholder.typicode.com/posts', self.newItem)
+        $http.post('/api/note', self.newItem)
             .then(fetchItems)
             .then(function(response) {
                 self.newItem = {};
