@@ -3,26 +3,26 @@ var app = angular.module('angularIntroApp', []);
 
 app.controller('MainCtrl', ['$http', function ($http) {
     var self = this;
-    self.items =[];
-    self.newItem = {};
+    self.members =[];
+    self.newMember = {};
 
 
-    var fetchItems = function() {
-        return $http.get('/api/note').then(
+    var fetchMembers = function() {
+        return $http.get('/api/members').then(
             function(response) {
-                self.items = response.data;
+                self.members = response.data;
             }, function(errResponse) {
                 console.error('Error while fetching notes');
             });
     };
 
-    fetchItems();
+    fetchMembers();
 
     self.add = function() {
-        $http.post('/api/note', self.newItem)
-            .then(fetchItems)
+        $http.post('/api/members', self.newMember)
+            .then(fetchMembers)
             .then(function(response) {
-                self.newItem = {};
+                self.newMember = {};
             });
     };
 }]);

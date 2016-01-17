@@ -12,9 +12,11 @@
 
 <body ng-controller="MainCtrl as mainCtrl">
 <h1>Hello Servers!</h1>
-<div ng-repeat="todo in mainCtrl.items" class="item">
-    <div><span ng-bind="todo.label"></span></div>
-    <div>- by <span ng-bind="todo.author"></span></div>
+<div ng-repeat="member in mainCtrl.members" class="item">
+    <div>Name: <span ng-bind="member.name"></span></div>
+    <div>Lastname: <span ng-bind="member.lastname"></span></div>
+    <div>Age: <span ng-bind="member.age"></span></div>
+    <div>Status: <span ng-bind="member.status"></span></div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js"></script>
