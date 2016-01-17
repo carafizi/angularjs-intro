@@ -4,7 +4,7 @@ var app = angular.module('angularIntroApp', []);
 app.controller('MainCtrl', ['$http', function ($http) {
     var self = this;
     self.members =[];
-    self.newMember = {};
+    self.newMember = {status:false};
 
 
     var fetchMembers = function() {

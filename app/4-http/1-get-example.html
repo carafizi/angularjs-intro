@@ -4,15 +4,16 @@
 <head>
     <title>$http get example</title>
     <style>
-        .item {
+        .member {
             padding: 10px;
         }
     </style>
 </head>
 
 <body ng-controller="MainCtrl as mainCtrl">
-<h1>Hello Servers!</h1>
-<div ng-repeat="member in mainCtrl.members" class="item">
+<h1>List of members</h1>
+<div ng-repeat="member in mainCtrl.members" class="member">
+    <div>ID: <span ng-bind="member.id"></span></div>
     <div>Name: <span ng-bind="member.name"></span></div>
     <div>Lastname: <span ng-bind="member.lastname"></span></div>
     <div>Age: <span ng-bind="member.age"></span></div>

@@ -3,30 +3,35 @@
 <head>
     <title>HTTP Post Example</title>
     <style>
-        .item {
+        .member {
             padding: 10px;
         }
     </style>
 </head>
 
 <body ng-controller="MainCtrl as mainCtrl">
-<h1>Hello Servers!</h1>
-<div ng-repeat="item in mainCtrl.items" class="item">
-    <div>UserId:<span ng-bind="item.userId"></span></div>
-    <div>ID:<span ng-bind="item.id"></span></div>
-    <div>Body:<span ng-bind="item.body"></span></div>
-    <div>Title: <span ng-bind="item.title"></span></div>
+<h1>List of members</h1>
+<div ng-repeat="member in mainCtrl.members" class="member">
+    <div>ID: <span ng-bind="member.id"></span></div>
+    <div>Name: <span ng-bind="member.name"></span></div>
+    <div>Lastname: <span ng-bind="member.lastname"></span></div>
+    <div>Age: <span ng-bind="member.age"></span></div>
+    <div>Status: <span ng-bind="member.status"></span></div>
 </div>
 
 <div>
     <form name="addForm" ng-submit="mainCtrl.add()">
         <input type="text"
-               placeholder="Label"
-               ng-model="mainCtrl.newTodo.label"
+               placeholder="Name"
+               ng-model="mainCtrl.newMember.name"
                required>
         <input type="text"
-               placeholder="Author"
-               ng-model="mainCtrl.newTodo.author"
+               placeholder="Lastname"
+               ng-model="mainCtrl.newMember.lastname"
+               required>
+        <input type="text"
+               placeholder="Age"
+               ng-model="mainCtrl.newMember.age"
                required>
         <input type="submit"
                value="Add"
