@@ -47,7 +47,7 @@ FIFA.TEAM_DETAILS = {
     headCoach: 'Vicente del Bosque',
     captain: 'Iker Casillas',
     flagUrl: 'http://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg',
-    logoUrl: 'http://upload.wikimedia.org/wikipedia/en/thumb/3/31/Spain_National_Football_Team_badge.png/417px-Spain_National_Football_Team_badge.png'
+    logoUrl: 'http://upload.wikimedia.org/wikipedia/en/3/31/Spain_National_Football_Team_badge.png'
   },
 
   'GER' : {
@@ -95,7 +95,7 @@ FIFA.TEAM_DETAILS = {
     headCoach: 'Óscar Tabárez',
     captain: 'Diego Lugano',
     flagUrl: 'http://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay.svg',
-    logoUrl: 'http://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Uruguay_football_association.svg/195px-Uruguay_football_association.svg.png'
+    logoUrl: 'http://league-mp7static.mlsdigital.net/mp6/UruguayFederation(FORMATTED).jpg'
   }
 };
 

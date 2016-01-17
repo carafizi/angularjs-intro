@@ -16,7 +16,7 @@ app.controller('MainCtrl', ['$http', function ($http) {
             });
     };
 
-    fetchMembers();
+    //fetchMembers();
 
     self.add = function() {
         $http.post('/api/members', self.newMember)

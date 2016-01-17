@@ -89,6 +89,7 @@ var lastMemberId = 6;
 router.get('/members', function(req, res) {
     res.send(members);
 });
+
 router.post('/members', function(req, res) {
     var member = req.body;
     member.id = lastMemberId;
@@ -96,7 +97,6 @@ router.post('/members', function(req, res) {
     members.push(member);
     res.send(member);
 });
-
 
 router.post('/members/:id/done', function(req, res) {
     var memberId = req.params.id;

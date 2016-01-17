@@ -1,6 +1,6 @@
-// File: chapter10/routing-example/app/scripts/app.js
-angular.module('fifaApp', ['ngRoute'])
-  .config(function($routeProvider) {
+var app = angular.module('fifaApp', ['ngRoute']);
+
+app.config(function($routeProvider) {
 
     $routeProvider.when('/', {
       templateUrl: 'views/team_list.html',
