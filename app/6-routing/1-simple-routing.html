@@ -26,9 +26,9 @@
 
     app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider
-                .when('/', {template: '<h5>This is the DEFAULT route</h5>'})
-                .when('/second', {template: '<h5>This is the SECOND route</h5>'})
-                .when('/third', {template: '<h5>This is the THIRD route</h5>'})
+                .when('/', {template: '<h5 style="background-color: #ffff00">This is the DEFAULT route</h5>'})
+                .when('/second', {template: '<h5 style="background-color: #419641">This is the SECOND route</h5>'})
+                .when('/third', {template: '<h5 style="background-color: #e4b9b9">This is the THIRD route</h5>'})
                 .when('/included', {templateUrl: 'template.html'})
                 .when('/redirectToSecond', {redirectTo: '/second'})
                 .otherwise({redirectTo: '/'});
