@@ -7,11 +7,11 @@ app.controller('SimpleNgModelCtrl', [function () {
 app.controller('SimpleNgModelCtrl2', [function() {
   this.change = function() {
     this.username = 'changed';
-    this.password = 'password';
+    this.password = 'changed_password';
   };
   this.submit = function() {
     console.log('User clicked submit with ',
-      this.username, self.password);
+      this.username, this.password);
   };
 }]);
 

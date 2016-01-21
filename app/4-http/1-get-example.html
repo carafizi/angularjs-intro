@@ -12,6 +12,9 @@
 
 <body ng-controller="MainCtrl as mainCtrl">
 <h1>List of members</h1>
+
+<!--<button ng-click="mainCtrl.fetchMembers()">Load members</button>-->
+
 <div ng-repeat="member in mainCtrl.members" class="member">
     <div>ID: <span ng-bind="member.id"></span></div>
     <div>Name: <span ng-bind="member.name"></span></div>

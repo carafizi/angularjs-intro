@@ -16,24 +16,24 @@ app.controller('FilterCtrl2', [function() {
 }]);
 
 app.controller('FilterCtrlArrays', [function() {
-    this.notes = [
-        {label: 'FC Todo', type: 'chore', done: false},
-        {label: 'FT Todo', type: 'task', done: false},
-        {label: 'FF Todo', type: 'fun', done: true},
-        {label: 'SC Todo', type: 'chore', done: true},
-        {label: 'ST Todo', type: 'task', done: true},
-        {label: 'SF Todo', type: 'fun', done: true},
-        {label: 'TC Todo', type: 'chore', done: false},
-        {label: 'TT Todo', type: 'task', done: false},
-        {label: 'TF Todo', type: 'fun', done: false}
+    this.teams = [
+        {team: 'Barcelona', country: 'Spain', isChampion: true},
+        {team: 'Real Madrid', country: 'Spain', isChampion: false},
+        {team: 'Liverpool', country: 'England', isChampion: true},
+        {team: 'Arsenal', country: 'England', isChampion: false},
+        {team: 'Bavaria', country: 'Germany', isChampion: true},
+        {team: 'Shalke', country: 'Germany', isChampion: false},
+        {team: 'Milan', country: 'Italy', isChampion: true},
+        {team: 'Inter', country: 'Italy', isChampion: false}
     ];
-    this.sortOrder = ['+type', '-label'];
+
+    this.sortOrder = ['+country', '-team'];
 
     this.filterOptions = {
         "string": '',
-        "object": {done: true, label: 'S'},
-        "function": function(note) {
-            return note.type === 'task' && note.done === false;
+        "object": {isChampion: true, team: 'B'},
+        "function": function(team) {
+            return team.country === 'Spain' && team.isChampion === false;
         }
     };
 
@@ -43,8 +43,7 @@ app.controller('FilterCtrlArrays', [function() {
 
 app.controller('FilterCtrlCustom', [function() {
     this.startTime = new Date().getTime();
-    this.someTimeAgo = new Date().getTime() -
-        (1000 * 60 * 60 * 4);
+    this.someTimeAgo = new Date().getTime() - (1000 * 60 * 60 * 4);
 }])
     .filter('timeAgo', [function() {
         var ONE_MINUTE = 1000 * 60;

@@ -13,67 +13,6 @@ app.use(methodOverride()); 					// simulate DELETE and PUT
 
 var router = express.Router();
 
-//var notes = [
-//    {id: 1, label: 'First Note', author: 'David'},
-//    {id: 2, label: 'Second Note', author: 'Brad'},
-//    {id: 3, label: 'Middle Note', author: 'Martin'},
-//    {id: 4, label: 'Last Note', author: 'Tomas'},
-//    {id: 5, label: 'Really the last Note', author: 'Xavi'}
-//
-//];
-//var lastId = 6;
-//
-//router.get('/note', function(req, res) {
-//    res.send(notes);
-//});
-//router.post('/note', function(req, res) {
-//    var note = req.body;
-//    note.id = lastId;
-//    lastId++;
-//    notes.push(note);
-//    res.send(note);
-//});
-//
-//
-//router.post('/note/:id/done', function(req, res) {
-//    var noteId = req.params.id;
-//    var note = null;
-//    for (var i = 0; i < notes.length; i++) {
-//        if (notes[i].id == req.params.id) {
-//            note = notes[i];
-//            break;
-//        }
-//    }
-//    note.label = 'Done - ' + note.label;
-//    res.send(notes);
-//});
-//
-//router.get('/note/:id', function(req, res) {
-//    for (var i = 0; i < notes.length; i++) {
-//        if (notes[i].id == req.params.id) {
-//            res.send(notes[i]);
-//            break;
-//        }
-//    }
-//    res.send({msg: 'Note not found'}, 404);
-//});
-//router.post('/note/:id', function(req, res) {
-//    for (var i = 0; i < notes.length; i++) {
-//        if (notes[i].id == req.params.id) {
-//            notes[i] = req.body;
-//            notes[i].id = req.params.id;
-//            res.send(notes[i]);
-//            break;
-//        }
-//    }
-//    res.send({msg: 'Note not found'}, 404);
-//});
-//
-//router.post('/login', function(req, res) {
-//    console.log('API LOGIN FOR ', req.body);
-//    res.send({msg: 'Login successful for ' + req.body.username});
-//});
-
 
 //----------------- Members--------------------------
 var members = [
@@ -85,6 +24,9 @@ var members = [
 
 ];
 var lastMemberId = 6;
+
+
+//-----------------REST API------------------------------------
 
 router.get('/members', function(req, res) {
     res.send(members);

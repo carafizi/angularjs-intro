@@ -1,6 +1,6 @@
 var app = angular.module('angularIntroApp', []);
 
-//Using controllers
+//Managing tabs
 app.controller('MainCtrl', function () {
   this.tab = 'first';
   this.open = function (tab) {
@@ -8,6 +8,7 @@ app.controller('MainCtrl', function () {
   };
 });
 
+//Adding items
 app.controller('SubCtrl', function () {
   this.list = [
     {id: 1, label: 'Item 0'},
@@ -25,8 +26,8 @@ app.controller('SubCtrl', function () {
 app.controller('LogController', ['$log', '$location', function($l, $location) {
   var number = 1;
   this.logStuff = function() {
-    $l.log('The button was pressed -' + number);
-    //$l.log('Browser url -' + $location.host());
+    $l.log('The button was pressed: ' + number);
+    //$l.log('Browser url: ' + $location.host());
     number++;
   };
 }]);

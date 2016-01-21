@@ -5,7 +5,8 @@
 <body ng-controller="NgRepeatCtrl as ctrl">
 
 <div ng-repeat="note in ctrl.notes">
-  <span class="label"> {{note.label}}</span>
+  <span class="label"> {{note.label}} - </span>
+  <span class="label"> {{note.author}} - </span>
   <span class="status" ng-bind="note.done"></span>
 </div>
 

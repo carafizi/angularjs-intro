@@ -7,7 +7,7 @@ app.controller('MainCtrl', ['$http', function ($http) {
     self.newMember = {status:false};
 
 
-    var fetchMembers = function() {
+    self.fetchMembers = function() {
         return $http.get('/api/members').then(
             function(response) {
                 self.members = response.data;
@@ -16,11 +16,11 @@ app.controller('MainCtrl', ['$http', function ($http) {
             });
     };
 
-    //fetchMembers();
+    self.fetchMembers();
 
     self.add = function() {
         $http.post('/api/members', self.newMember)
-            .then(fetchMembers)
+            .then(self.fetchMembers)
             .then(function(response) {
                 self.newMember = {};
             });
